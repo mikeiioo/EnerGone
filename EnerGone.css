@@ -109,7 +109,37 @@ section a{
     font-weight: 600;
 }
 
+.Brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 15%;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    color: #FFFFFF;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+footer img {
+    width: 40px; /* Adjust the size of the logo */
+    height: auto;
+}
+
+#Brand-Title{
+    font-size: 50px;
+}
 /* This is for the login page */
+
 
 
 
