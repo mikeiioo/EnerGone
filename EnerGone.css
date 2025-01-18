@@ -110,3 +110,85 @@ section a{
 }
 
 /* This is for the login page */
+
+
+
+
+
+
+
+/* This is for the Previous Outages Page */
+body {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+     /* Vertically center */
+    align-items: center; /* Horizontally center */
+    height: 150px; /* Make body take full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #302D2D; /* Optional: Light background color */
+}
+
+.Head {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 80px;
+    margin-bottom: 20px; /* Space between header and search bar */
+    color: #B7AD45;
+    font-family: 'Inria Serif', serif;
+}
+
+#pv-search-bar {
+    width: 480px; /* Set a specific width for the search bar */
+    padding: 10px 15px; /* Padding inside the search box */
+    font-size: 16px; /* Text size */
+    border: 2px solid black; /* Border color */
+    border-radius: 50px; /* Rounded corners */
+    background-color: rgb(188, 186, 186); /* Background color */
+    color: #333; /* Text color */
+    outline: none; /* Remove outline when focused */
+    transition: border 0.3s ease; /* Smooth transition effect */
+}
+
+#pv-search-bar:focus {
+    border-color: #2980b9; /* Change border color when focused */
+    background-color: #ffffff; /* Change background when focused */
+}
+
+#menu {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item{
+    font-size: 14px;
+    color: black;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+#Homepage_link{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+#Search_link{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+#Login_link{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+#Previous_link{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+/* This is for the Previous Outages Page */
