@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search with Hover Popup Table</title>
     <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0096FF;
+        }
+
         /* Basic styling for the input field */
         input[type="text"] {
             width: 300px;
@@ -15,6 +23,28 @@
             outline: none;
         }
 
+        #main-text{
+            position: absolute;
+            text-align: center;
+            left: 570px;
+            top: 10px;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+
+        }
+
+        #main-sub{
+            position: absolute;
+            text-align: center;
+            left: 490px;
+            top: 100px;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+
+
+        }
         /* Style for the autocomplete container */
         .autocomplete-container {
             position: relative;  /* Added this so that we can position the popup relative to the search bar */
@@ -56,6 +86,16 @@
         .autocomplete-popup-table th {
             background-color: #f4f4f4; /* Light gray background for the table header */
         }
+
+        .Brand{ 
+            width: 50x; /* Adjust the size of the logo */
+            height: 40px;
+            vertical-align: middle; /* Aligns the image vertically with the text */
+            position: relative;
+            bottom: -100px;
+            right: -62px;
+        }
+            
 
         .autocomplete-popup-table td {
             background-color: #fff; /* White background for table cells */
@@ -118,17 +158,28 @@
 </head>
 <body>
 
-<h1>Search with Hover Popup Table</h1>
+<div class="textty">
+    <h1 id="main-text">Previous Outages</h1>
+    <h3 id="main-sub">Browse a list of previous outages in different Georgia counties</h3>
+</div>
+
+<div class="Brand">
+    <footer>
+        <p id="Brand-Title">EnerGone</p>
+        <img src="EnerGone Logo.png" id="logoless">
+    </footer>
+</div>
+
 
 <div class="autocomplete-container">
-    <input id="myInput" type="text" name="myCountry" placeholder="Search country...">
+    <input id="myInput" type="text" name="myCountry" placeholder="Search county...">
     
     <!-- Popup Table -->
     <div class="autocomplete-popup-table" id="autocompletePopupTable">
         <table>
             <thead>
                 <tr>
-                    <th>Country</th> <!-- Added headers for the table -->
+                    <th>County</th> <!-- Added headers for the table -->
                     <th>Info</th>    <!-- Added headers for the table -->
                 </tr>
             </thead>
@@ -151,29 +202,6 @@ const countries = [
     { name: "Dougherty", info: "Amount of Previous Outages: 4" },
     { name: "Gordon", info: "Amount of Previous Outages: 1" },
     { name: "Fulton", info: "Amount of Previous Outages: 6" },
-    { name: "Putnam", info: "Amount of Previous Outages: 4" },
-    { name: "Hall", info: "Amount of Previous Outages: 4" },
-    { name: "Henry", info: "Amount of Previous Outages: 16" },
-    { name: "Liberty", info: "Amount of Previous Outages: 1" },
-    { name: "Rabun", info: "Amount of Previous Outages: 0" },
-    { name: "Lowndes", info: "Amount of Previous Outages: 4" },
-    { name: "Gwinnett", info: "Amount of Previous Outages: 4" },
-    { name: "Walker", info: "Amount of Previous Outages: 1" },
-    { name: "Greene", info: "Amount of Previous Outages: 7" },
-    { name: "Telfair", info: "Amount of Previous Outages: 4" },
-    { name: "Clayton", info: "Amount of Previous Outages: 4" },
-    { name: "Cherokee", info: "Amount of Previous Outages: 4" },
-    { name: "Laurens", info: "Amount of Previous Outages: 1" },
-    { name: "Richmond", info: "Amount of Previous Outages: 4" },
-    { name: "Catoosa", info: "Amount of Previous Outages: 2" },
-    { name: "Douglas", info: "Amount of Previous Outages: 3" },
-    { name: "Mcintosh", info: "Amount of Previous Outages: 4" },
-    { name: "Bibb", info: "Amount of Previous Outages: 21" },
-    { name: "Atkinson", info: "Amount of Previous Outages: 7" },
-    { name: "Effingham", info: "Amount of Previous Outages: 7" },
-    { name: "Bryan", info: "Amount of Previous Outages: 30" },
-    { name: "Chatham", info: "Amount of Previous Outages: 20" },
-    { name: "Haralson", info: "Amount of Previous Outages: 4" },
 ]
     
     
@@ -216,7 +244,7 @@ input.addEventListener("input", function() {
             </a>
         </li>
         <li><a href="EnerGone-HomePage.html">Home</a></li>
-        <li><a href="Hover-Function.html">Previous Outages</a></li>
+        <li><a href="Hover Function.html">Previous Outages</a></li>
         <li><a href="EnerGone-Log-In.html">Login</a></li>
     </ul>
 
