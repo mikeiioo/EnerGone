@@ -92,8 +92,6 @@
           alert("Your browser doesn't support geolocation.");
         }
 
-        
-
         const input = document.getElementById("search-input");
         const searchBox = new google.maps.places.SearchBox(input);
 
@@ -136,30 +134,9 @@
 
       function closeMenu() {
         const menu = document.getElementById("sliding-menu");
-        
         menu.style.display = "none";
         document.getElementById("current-outages-btn").style.display = "block";
       }
-
-      function sendZipCodeToBackend(zipCode) {
-    fetch("http://localhost:5000/process", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ zipcode: zipCode }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        // Display the result on the webpage
-        if (data.outage_info) {
-          document.getElementById("outage-info").textContent = data.outage_info;
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-      });
-    }
 
       window.initMap = initMap;
     </script>
@@ -290,6 +267,54 @@
         margin-bottom: 15px;
         color: #ff0000;
       }
+
+      nav {
+            position: absolute;
+            top: 115px; /* Adjusted to be below the EnerGone logo */
+            right: 10px; /* Aligned with the EnerGone logo */
+            z-index: 998;
+        }
+        
+        .LGNavBar {
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+        }
+        
+        .LGNavBar li {
+            margin-bottom: 10px;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .LGNavBar li#closer {
+            text-align: right;
+            padding: 5px;
+        }
+        
+        .LGNavBar li a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 20px;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+             position: absolute;
+            top: 85px; /* Adjusted to be below the EnerGone logo */
+            right: 10px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .menu-button svg {
+            fill: #0000ff;
+        }
     </style>
   </head>
   <body>
@@ -308,10 +333,10 @@
     <button id="current-outages-btn" onclick="openMenu()">Current Outages</button>
 
     <div id="sliding-menu">
-      <span class="close-arrow" onclick="closeMenu()">&#8595;</span>
+      <span class="close-arrow" onclick="closeMenu()">↓</span>
       <div class="menu-header">Current Outages</div>
       <div class="menu-item">Current Location: <span id="location-details">Not available</span></div>
-      <div class="menu-item">Additional Info: 0 outages, 0 customers affected </div>
+      <div class="menu-item">Additional Info: Here will be other details</div>
     </div>
 
     <div id="map"></div>
@@ -338,5 +363,20 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvIyFvQ3FsE_G7q_EsyBRyapBDF-ApRh4&callback=initMap&v=weekly&libraries=places"
       defer
     ></script>
+
+    <nav>
+      <ul class="LGNavBar">
+          <li id="closer" onclick="hideSideBar()">
+              <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" fill="#000000">
+                      <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                  </svg>
+              </a>
+          </li>
+          <li><a href="EnerGone-HomePage.html">Home</a></li>
+          <li><a href="Previous-Outages.html">Previous Outages</a></li>
+          <li><a href="Login">Login</a></li>
+      </ul>
+  </nav>
   </body>
 </html>
